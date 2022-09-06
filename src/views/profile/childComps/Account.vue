@@ -2,7 +2,7 @@
   <section class="account">
     <div class="account-item">
       <div class="account-top">
-        <span>0.00</span>元
+        <span>{{profile.balance}}</span>元
       </div>
       <div class="account-bottom">
         我的余额
@@ -10,7 +10,7 @@
     </div>
     <div class="account-item">
       <div class="account-top">
-        <span>0</span>个
+        <span>{{profile.Discounts}}</span>个
       </div>
       <div class="account-bottom">
         我的优惠
@@ -18,7 +18,7 @@
     </div>
     <div class="account-item">
       <div class="account-top">
-        <span>0</span>分
+        <span>{{profile.integration}}</span>分
       </div>
       <div class="account-bottom">
         我的积分
@@ -29,7 +29,15 @@
 
 <script>
 export default {
+props: {
+    profile: {
+      type: Object,
+      default() {
+        return {}
+      },
 
+    }
+  }
 }
 </script>
 

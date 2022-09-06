@@ -8,7 +8,7 @@
       </slot>
       <div class="login-info left">
         <slot name="user-nickname">
-          <div>登陆/注册</div>
+          <div>{{profile.userName}}</div>
         </slot>
         <div class="phone">
           <span>
@@ -16,7 +16,7 @@
               <use xlink:href="#icon-phone"></use>
             </svg>
           </span>
-          <slot name="user-phone">暂无绑定手机号</slot>
+          <slot name="user-phone">{{profile.phone}}</slot>
         </div>
       </div>
       <svg class="icon-arrow" aria-hidden="true">
@@ -28,7 +28,15 @@
 
 <script>
 export default {
+  props: {
+    profile: {
+      type: Object,
+      default() {
+        return {}
+      },
 
+    }
+  }
 }
 </script>
 
